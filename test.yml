@@ -1,0 +1,13 @@
+---
+- name: For testing purpose
+  hosts: all
+  become: true
+  tasks:
+       - name: install package
+         yum:
+             name: vsftpd
+             state: installed
+       - name: run package
+         service: 
+                name: vsftpd
+                state: started
